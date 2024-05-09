@@ -1,0 +1,12 @@
+-   id: euphoria-app-test
+    name: 'euphoria-app go test'
+    entry: euphoria-app-test.sh
+    files: '\_test\.go$'
+    language: 'script'
+    args: [-container=app, --file=*_test.go, --additional_containers]
+    require_serial: false
+    container: test
+    file: app_test.go
+    additional_containers: []
+    minimum_pre_commit_version: '0'
+    description: "Runs `go test` inside running docker container, requires golang"
